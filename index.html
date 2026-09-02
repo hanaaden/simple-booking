@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mentorship — Where Your Change Starts</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #0a0a0a;
+    --bg-raised: #121212;
+    --ink: #ece6da;
+    --ink-dim: #96938a;
+    --gold: #c9a24a;
+    --line: rgba(236,230,218,0.12);
+  }
+
+  *{ box-sizing: border-box; margin:0; padding:0; }
+
+  html{ scroll-behavior: smooth; }
+
+  body{
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Inter', -apple-system, sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3{
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 500;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+  }
+
+  a{ color: inherit; }
+
+  .wrap{
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    padding: 120px 0 90px;
+    text-align: center;
+  }
+
+  .hero .kicker{
+    display:inline-block;
+    color: var(--gold);
+    font-size: 0.95rem;
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 400;
+    margin-bottom: 22px;
+  }
+
+  .hero h1{
+    font-size: clamp(2.3rem, 5.5vw, 3.6rem);
+    max-width: 14ch;
+    margin: 0 auto 20px;
+  }
+
+  .hero h1 em{
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .hero p{
+    color: var(--ink-dim);
+    font-size: 1.08rem;
+    max-width: 46ch;
+    margin: 0 auto 42px;
+  }
+
+  .btn{
+    display: inline-block;
+    background: var(--gold);
+    color: #0a0a0a;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 16px 34px;
+    border-radius: 3px;
+    transition: transform 0.15s ease, background 0.15s ease;
+  }
+
+  .btn:hover{
+    background: #ddb85c;
+    transform: translateY(-1px);
+  }
+
+  .btn:focus-visible, a:focus-visible{
+    outline: 2px solid var(--gold);
+    outline-offset: 3px;
+  }
+
+  .btn-sub{
+    display:block;
+    margin-top: 14px;
+    color: var(--ink-dim);
+    font-size: 0.85rem;
+  }
+
+  /* ---------- Divider ---------- */
+  .divider{
+    border: none;
+    border-top: 1px solid var(--line);
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  /* ---------- Straight talk section ---------- */
+  section{
+    padding: 74px 0;
+  }
+
+  .straight-talk{
+    background: var(--bg-raised);
+  }
+
+  .straight-talk .wrap{
+    max-width: 640px;
+  }
+
+  .straight-talk h2{
+    font-size: 1.7rem;
+    margin-bottom: 22px;
+  }
+
+  .straight-talk p{
+    color: var(--ink-dim);
+    font-size: 1.02rem;
+    margin-bottom: 16px;
+    max-width: 60ch;
+  }
+
+  .straight-talk strong{
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  /* ---------- Steps ---------- */
+  .steps h2{
+    font-size: 1.7rem;
+    margin-bottom: 8px;
+  }
+
+  .steps > .wrap > p{
+    color: var(--ink-dim);
+    margin-bottom: 46px;
+    max-width: 52ch;
+  }
+
+  .step-list{
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .step{
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    gap: 20px;
+    padding: 28px 0;
+    border-top: 1px solid var(--line);
+  }
+
+  .step:last-child{
+    border-bottom: 1px solid var(--line);
+  }
+
+  .step .num{
+    font-family: 'Fraunces', serif;
+    font-size: 1.4rem;
+    color: var(--gold);
+  }
+
+  .step h3{
+    font-size: 1.15rem;
+    margin-bottom: 8px;
+    font-weight: 600;
+  }
+
+  .step p{
+    color: var(--ink-dim);
+    font-size: 0.98rem;
+    max-width: 50ch;
+  }
+
+  /* ---------- Commitment ---------- */
+  .commitment{
+    background: var(--bg-raised);
+  }
+
+  .commitment blockquote{
+    font-family: 'Fraunces', serif;
+    font-size: clamp(1.3rem, 3vw, 1.7rem);
+    font-weight: 500;
+    line-height: 1.4;
+    max-width: 30ch;
+    margin: 0 auto 24px;
+    text-align: center;
+  }
+
+  .commitment p{
+    color: var(--ink-dim);
+    text-align: center;
+    max-width: 52ch;
+    margin: 0 auto;
+  }
+
+  /* ---------- Final CTA ---------- */
+  .final{
+    text-align: center;
+    padding: 90px 0 110px;
+  }
+
+  .final h2{
+    font-size: clamp(1.8rem, 4vw, 2.4rem);
+    margin-bottom: 18px;
+  }
+
+  .final p{
+    color: var(--ink-dim);
+    max-width: 44ch;
+    margin: 0 auto 38px;
+  }
+
+  footer{
+    text-align: center;
+    padding: 30px 0 50px;
+    color: var(--ink-dim);
+    font-size: 0.82rem;
+  }
+
+  @media (max-width: 520px){
+    .hero{ padding: 84px 0 64px; }
+    section{ padding: 56px 0; }
+    .step{ grid-template-columns: 36px 1fr; }
+  }
+</style>
+</head>
+<body>
+
+  <section class="hero">
+    <div class="wrap">
+      <span class="kicker">A one-to-one mentorship</span>
+      <h1>Welcome. This is where <em>your change</em> starts.</h1>
+      <p>Not another course. Not a group chat. One person, one problem at a time — starting with a real conversation about where you're stuck.</p>
+      <a class="btn" href="https://cal.com/seofch-acedamy-yhha2g/30min" target="_blank" rel="noopener">Book your first call</a>
+      <span class="btn-sub">30 minutes · just the two of us</span>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section class="straight-talk">
+    <div class="wrap">
+      <h2>Before you book, be honest with yourself</h2>
+      <p>If you're not sure you're ready to commit, please don't book yet. This isn't a sales call, and it isn't casual browsing either — it's the start of a working relationship.</p>
+      <p><strong>My time is valuable, and so is yours.</strong> If there's a real chance you'll join the call and then disappear halfway through, or treat this as optional, this mentorship isn't the right fit for you right now — and that's okay. Come back when it is.</p>
+    </div>
+  </section>
+
+  <section class="steps">
+    <div class="wrap">
+      <h2>What happens next</h2>
+      <p>Three simple steps between now and our first real conversation.</p>
+      <div class="step-list">
+        <div class="step">
+          <span class="num">01</span>
+          <div>
+            <h3>Book the call</h3>
+            <p>Pick a time that actually works for you — one where you can give the full 30 minutes your undivided attention.</p>
+          </div>
+        </div>
+        <div class="step">
+          <span class="num">02</span>
+          <div>
+            <h3>Write down your questions</h3>
+            <p>Before we meet, prepare notes of the questions you want to ask. Think through where you're stuck, what you've already tried, and what you actually want to get out of this. Come with something written, not just a vague feeling.</p>
+          </div>
+        </div>
+        <div class="step">
+          <span class="num">03</span>
+          <div>
+            <h3>Show up, fully</h3>
+            <p>This first meeting is about getting to know you and understanding your problem properly. No pitch, no script — just an honest conversation, so I can figure out how I can actually help.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="commitment">
+    <div class="wrap">
+      <blockquote>"Half a commitment gets half a result — for both of us."</blockquote>
+      <p>I take this seriously, and I need you to as well. If you're in, be in fully. If you're not there yet, this simply isn't the right place for you at the moment.</p>
+    </div>
+  </section>
+
+  <section class="final">
+    <div class="wrap">
+      <h2>Ready to be honest about where you're stuck?</h2>
+      <p>Book the call, bring your questions, and let's start figuring it out together.</p>
+      <a class="btn" href="https://cal.com/seofch-acedamy-yhha2g/30min" target="_blank" rel="noopener">Book your first call</a>
+    </div>
+  </section>
+
+  <footer>
+    One-to-one mentorship · By appointment only
+  </footer>
+
+</body>
+</html>
